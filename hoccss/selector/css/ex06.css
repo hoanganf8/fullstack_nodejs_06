@@ -55,13 +55,21 @@ Cú pháp: selector:ten
   color: red;
 } */
 
-.products h2:first-of-type {
+/* .products h2:first-of-type {
   color: red;
-}
+} */
 
 /* .products h2:last-child {
   color: green;
 } */
-.products h2:last-of-type {
+/* .products h2:last-of-type {
   color: green;
+} */
+
+/* .products h2:nth-child(2n + 1) {
+  color: red;
+} */
+
+.products .item:nth-of-type(2n + 1) {
+  color: red;
 }

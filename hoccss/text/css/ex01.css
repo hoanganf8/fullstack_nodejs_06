@@ -1,0 +1,43 @@
+/*
+Các thuộc tính định dạng text (văn bản)
+
+1. color: Thay đổi màu văn bản
+Cú pháp: color: value_color
+- Tên màu (Tiếng Anh)
+- Mã màu hexa
+- Mã màu grb
+- Mã màu hsl
+
+color opacity
+
+Lưu ý: Trong các thuộc tính css, luôn có 2 giá trị kế thừa
+- initial --> Khôi phục về giá trị mặc định ban đầu của trình duyệt
+- inherit --> Kế thừa giá trị của thẻ cha
+*/
+body {
+  color: green;
+}
+.title {
+  color: rgb(255, 0, 0);
+}
+.title::before {
+  content: "F8";
+  color: blueviolet;
+}
+.title:hover::before {
+  color: currentColor;
+}
+.title:hover {
+  color: initial;
+}
+
+.sub-title {
+  color: rgba(255, 0, 0, 0.473);
+}
+.sub-title:hover {
+  color: inherit;
+}
+
+.content {
+  color: #00cc02;
+}
