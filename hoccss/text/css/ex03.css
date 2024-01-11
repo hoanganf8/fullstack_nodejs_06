@@ -22,6 +22,12 @@ Thuộc tính text-transform: Thay đổi chữ thường, hoa
 + lowercase
 + uppercase
 + capitalize
+
+letter-spacing: Tạo khoảng cách giữa các ký tự
+
+word-spacing: Tạo khoảng cách giữa các từ
+
+--> Chấp nhận giá trị âm
 */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 @font-face {
@@ -64,6 +70,8 @@ p {
   font-weight: 700;
   font-style: normal;
   /* text-decoration: overline underline line-through; */
+  /* letter-spacing: 0.5em; */
+  word-spacing: 5px;
 }
 
 a {

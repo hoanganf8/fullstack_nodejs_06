@@ -1,0 +1,34 @@
+/*
+text-align: Căn chỉnh văn bản theo chiều ngang
+- left
+- center
+- right
+- justify
+Lưu ý: Chỉ áp dụng thuộc tính này cho các thẻ block
+*/
+.content {
+  /* word-wrap: break-word; */
+  /* word-break: break-all; */
+}
+
+.content p {
+  /* text-indent: 10px; */
+  /* text-align: justify; */
+}
+
+.link {
+  text-align: center;
+}
+
+.link div {
+  width: 50px;
+}
+
+.image {
+  text-align: center;
+}
+
+.content {
+  text-align: right;
+  text-align-last: center;
+}
