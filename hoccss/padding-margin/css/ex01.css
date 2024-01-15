@@ -1,0 +1,51 @@
+/*
+padding: Khoảng cách giữa viền và nội dung
+
+1. padding: value
+2. padding: value1 value2
+3. padding: value1 value2 value3
+4. padding: value1 value2 value3 value4
+
+Các thuộc tính mở rộng
+padding-top
+padding-left
+padding-right
+padding-bottom
+
+Lưu ý: 
+- padding dùng đơn vị % --> Tỷ lệ theo width của thành phần cha
+- padding chỉ có tác dụng top bottom nếu thẻ html là block
+
+Tỷ lệ: 
+- 1x1: padding-top: 100%
+- 4x3: padding-top: 75%
+- 3x2: padding-top: 66.66%
+- 8x5: padding-top: 62.5%
+- 16x9: padding-top: 56.25%
+- 21x9: padding-top: 42.85%
+
+Tìm hiểu thêm về thuộc tính aspect-ratio
+*/
+.box {
+  border: 1px solid red;
+  /* padding-top: 50%; */
+  width: 300px;
+}
+
+.link {
+  border: 1px solid green;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+
+.content {
+  border: 1px solid red;
+  width: 200px;
+  height: 200px;
+}
+
+.children {
+  background: green;
+  /* padding-top: 75%; */
+  /* aspect-ratio: 4/3; */
+}
