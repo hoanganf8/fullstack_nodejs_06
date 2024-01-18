@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  width: 300px;
+  margin: 30px auto;
+  border: 1px solid red;
+}
+
+.box ul {
+  /* list-style-position: inside;
+  list-style-type: lower-roman; */
+  /* list-style: inside lower-roman; */
+  list-style: none;
+}
+
+/*
+- list-style-position: inside | outside
+- list-style-type: none | disc | circle | square | decimal | decimal-leading-zero | upper-alpha | lower-alpha | upper-roman | lower-roman
+- list-style-image: Thay biểu tượng bằng ảnh --> Không nên dùng (Không chỉnh được kích thước)
+--> Thay thế bằng background
+- list-style: position type image
+*/

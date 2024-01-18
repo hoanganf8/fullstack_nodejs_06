@@ -1,0 +1,64 @@
+/*
+Float: Thuộc tính trôi các thành phần html về bên trái, bên phải thành phần cha của nó
+- none
+- left
+- right
+
+Clear: Ngăn tình trạng trôi các thành phần do các thành phần phía trên có sử dụng float
+- left --> Ngăn trôi về bên trái
+- right --> Ngăn trôi về bên phải
+- both --> Chặn cả 2
+
+==> Lưu ý: Chỉ hoạt động với thẻ block
+
+Kỹ thuật clearfix: 
+- Kết hợp tất cả các thuộc tính css lại để giải quyết bài toán chia layout bằng float và clear
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.row {
+  width: 90%;
+  margin: 30px auto;
+  border: 1px solid red;
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col-1 {
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 128, 0, 0.605);
+  color: #fff;
+  float: left;
+}
+
+.col-2 {
+  width: 150px;
+  height: 120px;
+  background: rgba(255, 0, 0, 0.667);
+  color: #fff;
+  float: left;
+}
+
+.col-3 {
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 255, 0.583);
+  color: #fff;
+  float: left;
+}
+.clearfix {
+  clear: both;
+}
+.text {
+  background: yellow;
+}

@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.images {
+  border: 1px solid red;
+  width: 90%;
+  margin: 30px auto;
+}
+
+.images::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.images img {
+  /* width: 300px;
+  height: 200px; */
+  float: left;
+  border-radius: 50%;
+  shape-outside: circle();
+  margin-right: 15px;
+}
+
+.title {
+  /* width: 200px; */
+  border: 1px solid red;
+  float: right;
+  /* margin-left: auto; */
+}

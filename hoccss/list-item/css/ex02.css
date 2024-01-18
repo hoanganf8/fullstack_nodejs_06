@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background: #2c3e50;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu {
+  width: 90%;
+  margin: 30px auto;
+  background: #34495e;
+  border-radius: 5px;
+}
+.menu ul {
+  font-size: 0;
+}
+.menu ul li {
+  display: inline-block;
+}
+.menu ul li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: initial;
+}
+.menu ul li a:hover {
+  background: #1abc9c;
+  border-radius: 5px;
+}
