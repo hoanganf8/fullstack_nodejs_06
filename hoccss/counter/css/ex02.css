@@ -1,0 +1,9 @@
+.facebook-icon {
+  color: red;
+  font-size: 3rem;
+}
+.text::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f0ac";
+  font-weight: 900;
+}
