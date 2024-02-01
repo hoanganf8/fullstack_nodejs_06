@@ -1,0 +1,27 @@
+.box {
+  border: 1px solid red;
+  padding: 30px;
+  background: blanchedalmond;
+}
+
+.box h2 {
+  color: green;
+}
+
+@media screen and (max-width: 1199px) {
+  .box {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .box {
+    border-color: green;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .box h2 {
+    display: none;
+  }
+}

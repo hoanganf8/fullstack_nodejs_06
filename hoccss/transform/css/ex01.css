@@ -1,0 +1,55 @@
+/*
+Thuộc tính transform: Thay đổi hình dạng ban đầu của element
+1. Xoay
+2. Nghiêng
+3. Phóng to / Thu nhỏ
+4. Di chuyển
+Cú pháp: transform: value
+- rotate(angle) --> Xoay theo trục Z
+- rotateX(angle) --> Xoay theo trục X
+- rotateY(angle) --> Xoay theo trục Y
+- scale(x, y) --> Phóng to / Thu nhỏ
+- scaleX(value) --> Phóng to theo trục X
+- scaleY(value) --> Phóng to theo trục Y
+- skew(angleX, angleY) --> Nghiêng
+- skewX(angle) --> Nghiêng theo trục X
+- skewY(angle) --> Nghiêng theo trục Y
+- translate(x, y) --> Di chuyển
+- translateX(value) --> Di chuyển theo trục X
+- translateY(value) --> Di chuyển theo trục Y
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  margin: 30px auto;
+  padding: 30px;
+  position: relative;
+}
+.element {
+  width: 200px;
+  height: 200px;
+  background: green;
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.box:hover .element {
+  /* transform: rotateY(180deg); */
+  /* rotate: 45deg; */
+  /* transform: scale(1.5, 0.5); */
+  /* scale: 1.5 1.2; */
+  /* transform: skew(0, -30deg); */
+  /* transform: translate(100px, 100px); */
+  /* translate: 100%; */
+}
+/*
+Di chuyển khối màu xanh ra chính giữa của khung màu đỏ (Không dùng: flex, margin)
+*/
