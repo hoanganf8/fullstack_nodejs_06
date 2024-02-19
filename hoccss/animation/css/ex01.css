@@ -1,0 +1,47 @@
+.box {
+  border: 1px solid red;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.box span {
+  background: green;
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: move;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  /* from {
+    top: 0;
+    left: 0;
+  } */
+  25% {
+    top: 0;
+    left: 100%;
+    translate: -100%;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+    translate: -100% -100%;
+  }
+  75% {
+    left: 0;
+    top: 100%;
+    translate: 0 -100%;
+  }
+  /* to {
+    top: 0;
+    left: 0;
+  } */
+}
