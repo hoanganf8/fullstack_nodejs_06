@@ -1,0 +1,80 @@
+//Comment SCSS
+/*Comment CSS*/
+//Biến trong SCSS chấp nhận
+// - Giá trị css
+// - Chuỗi
+// - true, false
+// - Số
+
+//Trong SCSS, chấp nhận các toán tử: +, -, *, /, %, ==, >=, <=, >, <, !=, and, or, not
+@import "partials/variables";
+@import "partials/reset";
+
+:root {
+  --secondary-color: yellow;
+}
+.header {
+  $headerSpacing: 30px;
+  padding: $headerSpacing 0;
+  box-shadow: 3px 4px 5px #ccc;
+  background: $primaryColor;
+  .topbar {
+    background: var(--secondary-color);
+    .left {
+      list-style: none;
+      display: flex;
+      a {
+        text-decoration: none;
+      }
+    }
+    .right {
+      list-style: none;
+      display: grid;
+    }
+  }
+  nav {
+    &.menu {
+      > ul {
+        > li {
+          &::before {
+            content: "";
+          }
+          > a {
+            color: #333;
+            &:hover {
+              color: green;
+              &::before {
+                content: "";
+              }
+            }
+            &::after {
+              content: "";
+            }
+          }
+        }
+      }
+    }
+  }
+  .tagline {
+    text: {
+      decoration: none;
+      transform: uppercase;
+      align: center;
+      shadow: 3px 3px 3px #ccc;
+    }
+  }
+}
+
+//Các kỹ thuật sử dụng biến
+
+.box {
+  color: $color;
+  #{$props}: green;
+  font-size: #{$size}px;
+}
+#{$selectorPrefix}-1 {
+  width: 200px;
+}
+#{$selectorPrefix + "-2"} {
+  width: 300px;
+}

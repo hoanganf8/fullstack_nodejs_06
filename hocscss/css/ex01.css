@@ -1,0 +1,61 @@
+/*Comment CSS*/
+:root {
+  --secondary-color: yellow;
+}
+
+.header {
+  padding: 30px 0;
+  box-shadow: 3px 4px 5px #ccc;
+  background: red;
+}
+.header .topbar {
+  background: var(--secondary-color);
+}
+.header .topbar .left {
+  list-style: none;
+  display: flex;
+}
+.header .topbar .left a {
+  text-decoration: none;
+}
+.header .topbar .right {
+  list-style: none;
+  display: grid;
+}
+.header nav.menu > ul > li::before {
+  content: "";
+}
+.header nav.menu > ul > li > a {
+  color: #333;
+}
+.header nav.menu > ul > li > a:hover {
+  color: green;
+}
+.header nav.menu > ul > li > a:hover::before {
+  content: "";
+}
+.header nav.menu > ul > li > a::after {
+  content: "";
+}
+.header .tagline {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 3px 3px 3px #ccc;
+}
+
+.box {
+  color: red;
+  background-color: green;
+  font-size: 16px;
+}
+
+.col-1 {
+  width: 200px;
+}
+
+.col-2 {
+  width: 300px;
+}
+
+/*# sourceMappingURL=ex01.css.map */

@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: Roboto, sans-serif;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul,
+ol {
+  list-style: none;
+}
+/*
+Độ ưu tiên: 
+
+1. !important
+2. inline
+3. id
+4. class
+5. tag
+
+--> Phạm vi tác động càng rộng, độ ưu tiên càng thấp
+*/
+/* .title {
+  color: red;
+}
+#title {
+  color: green;
+}
+h1 {
+  color: blueviolet;
+} */
+
+h1.title {
+  color: red;
+}
+
+.title {
+  color: green;
+}
