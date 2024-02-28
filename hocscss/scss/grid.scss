@@ -1,0 +1,37 @@
+@use "partials/mixin" as m;
+@use "partials/reset";
+// @use "partials/variables" as v;
+//namespace mặc định theo tên file
+
+//Ví dụ: Trong file reset có: placeholder, function, mixin, variable --> Truy cập dựa vào namespace (Tên file)
+// Cú pháp: tennamespace.tenelement
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.container {
+  max-width: m.$containerWidth;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+[class^="col-"] {
+  padding: 0 10px;
+}
+// @import "partials/mixin";
+
+@include m.column();
+@each $prefix, $breakpoint in m.$breakpoints {
+  @media screen and (min-width: #{$breakpoint}) {
+    @include m.column($prefix);
+  }
+}

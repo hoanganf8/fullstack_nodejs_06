@@ -1,5 +1,16 @@
-$primaryColor: red; //camelCase
-$color: red;
-$props: background-color;
-$selectorPrefix: ".col"; //Chuỗi
-$size: 16; //Số
+// $primaryColor: red; //camelCase
+// $color: red;
+// $props: background-color;
+// $selectorPrefix: ".col"; //Chuỗi
+// $size: 16; //Số
+
+//Khai báo biến
+$containerWidth: 1300px;
+$column: 12; //Tổng số lượng cột
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);

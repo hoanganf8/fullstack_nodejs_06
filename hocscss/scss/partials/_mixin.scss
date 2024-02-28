@@ -1,0 +1,21 @@
+@use "./variables" as v; //Sử dụng biến ở trong file variable
+@forward "./variables"; //Chuyển tiếp biến ở file variable sang file mixin
+//Mixin
+@mixin column($breakpointPrefix: "") {
+  $selectorPrefix: "col-";
+  $offsetPrefix: "col-offset-";
+  @if ($breakpointPrefix != "") {
+    $selectorPrefix: $selectorPrefix + $breakpointPrefix + "-";
+    $offsetPrefix: $offsetPrefix + $breakpointPrefix + "-";
+  }
+  @for $i from 1 through v.$column {
+    //selectorPrefix: col-{sm|md|lg|xl|xxl}-
+    .#{$selectorPrefix + $i} {
+      flex-basis: calc(100% / v.$column * $i);
+      max-width: calc(100% / v.$column * $i);
+    }
+    .#{$offsetPrefix + $i} {
+      margin-left: calc(100% / v.$column * $i);
+    }
+  }
+}

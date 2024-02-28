@@ -1,0 +1,24 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+}
+
+.item-small {
+  width: 40px;
+}
+
+.item-regular {
+  width: 60px;
+}
+
+.item-large {
+  width: 80px;
+}
+
+.box {
+  padding: 10px;
+  display: flex;
+}
+
+/*# sourceMappingURL=ex03.css.map */

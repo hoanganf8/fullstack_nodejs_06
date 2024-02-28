@@ -1,0 +1,26 @@
+@mixin small-screen {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@include small-screen {
+  .header {
+    padding: 10px 0;
+    .header-inner {
+      display: flex;
+    }
+  }
+}
+
+@include medium-screen {
+  .header {
+    padding: 30px;
+  }
+}

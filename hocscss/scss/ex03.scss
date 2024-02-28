@@ -1,0 +1,97 @@
+//Câu lệnh rẽ nhánh
+$number: 1;
+@if $number <= 1 {
+  $size: 50;
+  .box {
+    width: 100px;
+    height: 100px;
+    @if $size >= 100 {
+      background: green;
+    } @else {
+      background: yellow;
+    }
+  }
+} @else if $number > 1 and $number <=5 {
+  .products {
+    background: red;
+  }
+} @else if $number > 5 and $number <=10 {
+  .posts {
+    color: green;
+  }
+} @else {
+  .courses {
+    padding: 30px;
+  }
+}
+
+//Vòng lặp
+//1. for through, to
+// @for $index from 1 through 12 {
+//   .col-#{$index} {
+//     @if $index % 2 == 0 {
+//       width: 100%;
+//     } @else {
+//       width: 10 * $index + px;
+//     }
+//   }
+// }
+
+//2. while
+// $index: 0;
+// @while $index < 10 {
+//   $index: $index + 1;
+//   .col-#{$index} {
+//     font-size: 10 * $index + px;
+//   }
+// }
+
+//3. each
+// $sizes: 30px, 40px, 50px, 60px; //Array
+// $length: length($sizes); //Trả về tổng số phần tử trong mảng
+// $index: 0;
+// @each $size in $sizes {
+//   //   $index: $index + 1;
+//   $index: index($sizes, $size); //index bắt đầu từ 1
+//   .item-#{$size} {
+//     width: $size;
+//     @if ($index == $length) {
+//       padding: 0;
+//     }
+//   }
+// }
+
+// $sizes: (small, 40px, normal), (regular, 60px, bold), (large, 80px, 600);
+// //Destructuring
+// @each $type, $size, $weight in $sizes {
+//   .item-#{$type} {
+//     font-size: $size;
+//     font-weight: $weight;
+//   }
+// }
+
+//key: value --> Map
+$sizes: (
+  small: 40px,
+  regular: 60px,
+  large: 80px,
+);
+
+@each $type, $size in $sizes {
+  .item-#{$type} {
+    width: $size;
+  }
+}
+
+.box {
+  padding: 10px;
+  display: flex;
+  //   @media screen and (min-width: 576px) {
+  //     display: none;
+  //   }
+}
+// @media screen and (min-width: 576px) {
+//   .box {
+//     display: none;
+//   }
+// }

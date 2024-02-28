@@ -1,61 +1,17 @@
-/*Comment CSS*/
-:root {
-  --secondary-color: yellow;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 20 |   background: $primaryColor;
+ *    |               ^^^^^^^^^^^^^
+ *    '
+ *   scss\ex01.scss 20:15  root stylesheet */
 
-.header {
-  padding: 30px 0;
-  box-shadow: 3px 4px 5px #ccc;
-  background: red;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 20 \2502    background: $primaryColor;\d\a    \2502                ^^^^^^^^^^^^^\a    \2575 \a   scss\\ex01.scss 20:15  root stylesheet";
 }
-.header .topbar {
-  background: var(--secondary-color);
-}
-.header .topbar .left {
-  list-style: none;
-  display: flex;
-}
-.header .topbar .left a {
-  text-decoration: none;
-}
-.header .topbar .right {
-  list-style: none;
-  display: grid;
-}
-.header nav.menu > ul > li::before {
-  content: "";
-}
-.header nav.menu > ul > li > a {
-  color: #333;
-}
-.header nav.menu > ul > li > a:hover {
-  color: green;
-}
-.header nav.menu > ul > li > a:hover::before {
-  content: "";
-}
-.header nav.menu > ul > li > a::after {
-  content: "";
-}
-.header .tagline {
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  text-shadow: 3px 3px 3px #ccc;
-}
-
-.box {
-  color: red;
-  background-color: green;
-  font-size: 16px;
-}
-
-.col-1 {
-  width: 200px;
-}
-
-.col-2 {
-  width: 300px;
-}
-
-/*# sourceMappingURL=ex01.css.map */
