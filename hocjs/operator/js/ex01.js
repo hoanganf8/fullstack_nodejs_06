@@ -86,7 +86,32 @@ var b = a === null || a === undefined ? "Không xác định" : a;
 console.log(b);
 
 /*
-Truthy, Falsy
-&&: a = b && "F8"
-||: a = b || "F8"
+7. falsy
+Trong trường hợp cần chuyển về boolean mà giá trị chuyển về false --> falsy
+0, "", undefined, null, false, NaN
+
+8. truthy
+Trong trường hợp cần chuyển về boolean mà giá trị chuyển về true --> truthy
+Các trường hợp còn lại
 */
+// var a = "false";
+// var b = a ? "Đúng" : "Sai";
+// console.log(b);
+
+/*
+9. &&
+Tìm falsy
+*/
+// var a = 10;
+// var b = 0;
+// var c = a && b && "F8";
+// console.log(c);
+
+/*
+10. ||
+Tìm truthy
+*/
+var a = 10;
+var b = 0;
+var c = a || b || "F8";
+console.log(c);
