@@ -120,4 +120,37 @@ function something() {
 // console.log(obj);
 Object.prototype.msg = "Hello";
 var obj = Object.create(null); //Tạo object mới không kế thừa prototype nào cả
-console.log(obj.msg);
+// console.log(obj.msg);
+
+//Tham chiếu
+var a = {
+  name: "Hoàng An",
+  email: "hoangan.web@gmail.com",
+};
+
+// var b = a;
+//Copy object
+//Shallow copy
+// var b = Object.assign({}, a);
+// var b = { ...a };
+var b = JSON.parse(JSON.stringify(a)); //Deep copy
+b.name = "Hoàng An f8";
+// console.log(a);
+// console.log(b);
+
+//Optional Chaining (?.)
+
+//1. Optional Chaining với thuộc tính
+var a = {
+  name: "Hoàng An",
+};
+console.log(a?.email?.domain);
+
+//2. Optional Chaining với phương thức
+var b = {};
+console.log(b?.getName?.());
+
+var users = ["User 1", "User 2", "User 3"];
+users?.forEach?.(function (user) {
+  console.log(user);
+});
