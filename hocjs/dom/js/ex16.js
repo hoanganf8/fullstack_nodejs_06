@@ -63,7 +63,11 @@ customElements.define(
       });
       this.render(shadow);
       this.initialStyle(shadow);
-      this.addEvent();
+      this.addEvent(shadow);
+      //   var loadEvent = new Event("todo-loaded");
+      //   var ul = shadow.querySelector("ul");
+      //   loadEvent.todoCount = ul.children.length;
+      //   this.dispatchEvent(loadEvent);
     }
     render(shadow) {
       var html = `
@@ -89,16 +93,16 @@ customElements.define(
       `;
       shadow.append(style);
     }
-    addEvent() {
+    addEvent(shadow) {
+      var btn = shadow.querySelector("button");
       var _this = this;
-      var btn = _this.querySelector("button");
       btn.addEventListener("click", function () {
-        _this.handleAdd(_this);
+        _this.handleAdd(shadow);
       });
     }
-    handleAdd(_this) {
-      var ul = _this.querySelector("ul");
-      var input = _this.querySelector("input");
+    handleAdd(shadow) {
+      var ul = shadow.querySelector("ul");
+      var input = shadow.querySelector("input");
       var value = input.value;
       if (!value) {
         alert("Vui lòng nhập tên công việc");
@@ -108,9 +112,38 @@ customElements.define(
       li.innerText = value;
       ul.append(li);
       input.value = "";
+
+      //Gửi event vào component todo-app để bất kỳ nơi nào cũng lắng nghe được
+      //Tạo event tên là todo-change --> Gán vào thẻ todo-app
+      var todoChangeEvent = new Event("todo-change");
+      todoChangeEvent.todoCount = ul.children.length;
+      this.dispatchEvent(todoChangeEvent);
     }
   }
 );
+
+customElements.define(
+  "todo-count",
+  class extends HTMLElement {
+    connectedCallback() {
+      var shadow = this.attachShadow({ mode: "open" });
+      var todoAppEl = document.querySelector("todo-app");
+
+      shadow.innerHTML = `<h3>Count: <span>${
+        todoAppEl.shadowRoot.querySelector("ul").children.length
+      }</span></h3>`;
+
+      todoAppEl.addEventListener("todo-change", function (e) {
+        shadow.querySelector("span").innerText = e.todoCount;
+      });
+    }
+  }
+);
+
+var todoAppEl = document.querySelector("todo-app");
+todoAppEl.addEventListener("todo-change", function (e) {
+  console.log(e.todoCount);
+});
 
 //Shadow DOM:
 
