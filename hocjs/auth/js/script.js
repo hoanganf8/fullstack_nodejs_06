@@ -39,7 +39,14 @@ const profileHtml = `<div class="w-75 mx-auto py-3">
   <li><a href="#">Tài khoản</a></li>
   <li><a href="#" class="logout">Đăng xuất</a></li>
 </ul>
-</div>`;
+<hr/>
+<form class="upload-form input-group">
+  <input type="file" class="form-control"/>
+  <button class="btn btn-success">Upload</button>
+</form>
+<div class="image"></div>
+</div>
+`;
 let isLogin;
 const handleLogout = () => {
   //Call API
@@ -138,6 +145,41 @@ const handleLogin = async (form) => {
   render();
 };
 
+const uploadFormEl = document.querySelector(".upload-form");
+const inputFileEl = uploadFormEl.querySelector('input[type="file"]');
+const imageEl = document.querySelector(".image");
+let previewUrl;
+inputFileEl.addEventListener("change", (e) => {
+  URL.revokeObjectURL(previewUrl);
+  previewUrl = URL.createObjectURL(e.target.files[0]);
+  const previewHTML = `<img style="width: 200px" src="${previewUrl}"/>`;
+  imageEl.innerHTML = previewHTML;
+});
+uploadFormEl.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const files = inputFileEl.files;
+  if (!files.length) {
+    alert("Vui lòng chọn ảnh");
+    return;
+  }
+  const formData = new FormData();
+  formData.append("file", files[0]);
+  //Thêm loading
+  imageEl.innerText = `Đang tải...`;
+  const response = await fetch(`${SERVER_AUTH_API}/files/upload`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!response.ok) {
+    imageEl.innerText = `Đã có lỗi xảy ra. Vui lòng thử lại sau`;
+    return;
+  }
+  const data = await response.json();
+  URL.revokeObjectURL(previewUrl);
+  imageEl.innerHTML = `<img style="width: 200px" src="${data.location}"/>`;
+  uploadFormEl.reset();
+});
+
 /*
 Chức năng đăng xuất
 
@@ -189,3 +231,27 @@ const requestRefresh = () => {
 // requestApi("/courses");
 // requestApi("/posts");
 // requestApi("/products");
+
+/*
+CORS: Cross-Origin Resource Sharing
+- Trình duyệt chặn không cho phép request tới server khác ORIGIN (Scheme + Hostname + Port)
+- Ví dụ: 
++ Server: https://api.fullstack.edu.vn
++ Client: https://fullstack.edu.vn
+
+Cơ chế chặn: 
+1. simple request
+- Server vẫn nhận được Request từ Client
+- Server vẫn xử lý request và trả Response
+- Trình duyệt block Response đó và JS không thể truy cập để lấy Response
+
+2. non-simple request:
+- Client Request ==> Trình duyệt tạm dừng request đó
+- Trình duyệt gửi 1 request thăm dò (Preflight với method OPTIONS)
+- Server trả về HTTP Response Header
+- Trình duyệt kiểm tra HTTP Response Header xem có hợp lệ không? (Cho phép CORS)
++ Hợp lệ: Request bị tạm dừng sẽ được tiếp tục
++ Không hợp lệ: Request bị tạm dừng sẽ dừng hẳn
+*/
+
+fetch(`https://api.escuelajs.co/api/v1/users`);
