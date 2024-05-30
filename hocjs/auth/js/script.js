@@ -1,6 +1,7 @@
 import { config } from "./config.js";
 import { httpClient } from "./client.js";
 const { SERVER_AUTH_API } = config;
+httpClient.baseUrl = SERVER_AUTH_API;
 const root = document.querySelector("#root");
 const loginHtml = `<div class="w-50 mx-auto py-3">
 <h2 class="text-center">Đăng nhập</h2>
@@ -71,16 +72,9 @@ const getProfile = async () => {
         JSON.parse(localStorage.getItem("login_token"));
 
       httpClient.token = accessToken;
-      const { response, data: user } = await httpClient.get(
-        `${SERVER_AUTH_API}/auth/profile`
-      );
+      const { response, data: user } = await httpClient.get(`/auth/profile`);
       if (!response.ok) {
-        const newTokens = await getRefreshToken(refreshToken);
-        if (!newTokens) {
-          throw new Error("Token không hợp lệ");
-        }
-        localStorage.setItem("login_token", JSON.stringify(newTokens));
-        getProfile();
+        throw new Error("Không ổn rồi");
       } else {
         const nameEl = document.querySelector(".profile .name");
         nameEl.innerText = user.name;
@@ -127,10 +121,7 @@ const handleLogin = async (form) => {
   //   },
   //   body: JSON.stringify(data),
   // });
-  const { response, data: tokens } = await httpClient.post(
-    `${SERVER_AUTH_API}/auth/login`,
-    data
-  );
+  const { response, data: tokens } = await httpClient.post(`/auth/login`, data);
   buttonBtn.innerText = "Đăng nhập";
   buttonBtn.disabled = false;
   if (!response.ok) {
