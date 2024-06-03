@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.karaoke {
+  height: 80vh;
+  background: blueviolet;
+  color: #fff;
+  padding: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.karaoke .karaoke-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.karaoke .karaoke-inner p {
+  margin: 10px 0;
+}
+.karaoke .word {
+  position: relative;
+}
+.karaoke .word span {
+  position: absolute;
+  left: 0;
+  color: yellow;
+  width: 0;
+  overflow: hidden;
+}
