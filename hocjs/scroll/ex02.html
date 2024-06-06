@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding-top: 30px;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        background: gold;
+        padding: 10px;
+      }
+      section {
+        height: 100vh;
+      }
+      .nav-item {
+        &.active {
+          color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button class="nav-item active" data-target="#section-1">
+        Section 1
+      </button>
+      <button class="nav-item" data-target="#section-2">Section 2</button>
+      <button class="nav-item" data-target="#section-3">Section 3</button>
+    </nav>
+    <section id="section-1">
+      <h2>Section 1</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam,
+        quibusdam tenetur magnam ipsa enim a quasi deserunt dolorum,
+        perspiciatis ad aspernatur natus omnis totam beatae. Similique nam
+        veritatis optio!
+      </p>
+    </section>
+    <section id="section-2">
+      <h2>Section 2</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam,
+        quibusdam tenetur magnam ipsa enim a quasi deserunt dolorum,
+        perspiciatis ad aspernatur natus omnis totam beatae. Similique nam
+        veritatis optio!
+      </p>
+    </section>
+    <section id="section-3">
+      <h2>Section 3</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam,
+        quibusdam tenetur magnam ipsa enim a quasi deserunt dolorum,
+        perspiciatis ad aspernatur natus omnis totam beatae. Similique nam
+        veritatis optio!
+      </p>
+    </section>
+    <script src="js/ex02.js"></script>
+  </body>
+</html>
