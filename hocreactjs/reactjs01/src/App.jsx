@@ -1,58 +1,53 @@
-// import { Fragment } from "react";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-
+import { useEffect } from "react";
+import { useState } from "react";
+// let a = 0;
 export default function App() {
-  const handleClick = (e) => {
-    console.log("Hello anh em");
-    console.log(e);
+  const [count, setCount] = useState(0);
+  //   if (a < 5) {
+  //     a++;
+  //   }
+  //   useEffect(() => {
+  //     console.log("Counter Re-render", count);
+  //     console.log(`a = ${a}`);
+  //   }, [a]);
+  const [todoList, setTodoList] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const getTodos = async () => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/todos`);
+    const data = await response.json();
+    setTodoList(data);
+    setLoading(false);
   };
-  const handleRemove = (index, e) => {
-    console.log(index);
-    console.log(e);
-    e.target.style.color = "red";
-  };
-  const users = ["User 1", "User 2", "User 3"];
-  const status = false;
-  const product = (
-    <>
-      <p>Lorem</p>
-      <p>F8</p>
-    </>
-  );
-  const user = {
-    name: "Hoàng An",
-    email: "hoangan.web@gmail.com",
-    age: 32,
-  };
-  const handleChange = ({ target }) => {
-    console.log(target.value);
-  };
+  useEffect(() => {
+    getTodos();
+  }, []);
   return (
-    <>
-      <Header title="Header 1" {...user} onChange={handleChange}>
-        <Footer />
-      </Header>
-      {/* <Header title="Header 2" /> */}
-      {product}
-      {status ? (
-        <h1>Học React rất dễ</h1>
+    <div>
+      {console.log("Counter Update UI")}
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <button onClick={() => setCount(count + 1)}>+</button>
+      <h2>Todo List</h2>
+      {isLoading ? (
+        <h3>Loading...</h3>
       ) : (
-        <>
-          <h2>Học React rất khó</h2>
-          <h2>Học React rất khó</h2>
-        </>
+        todoList.map(({ id, title }) => <h3 key={id}>{title}</h3>)
       )}
-      {users.map((user, index) => (
-        <h2 key={index}>
-          {user}{" "}
-          <button onClick={(event) => handleRemove(index, event)}>
-            Remove
-          </button>
-        </h2>
-      ))}
-      <button onClick={handleClick}>Click me</button>
-      <Footer />
-    </>
+    </div>
   );
 }
+
+/*
+Hook useEffect(callback, dependencies?)
+- Callback: Hàm thực thi
+- dependencies: Điều kiện để callback thực thi
++ [] ==> Callback chỉ thực thi sau lần re-render đầu tiên
++ null | undefined ==> Re-render ==> Thực thi
++ [var1, var2, var3,...] ==> 1 trong các biến thay đổi ==> Thực thi
+
+- Lifecycle
+- Mounting
+- Unmounting
+- Cleanup
+- Lifing State Up
+*/
