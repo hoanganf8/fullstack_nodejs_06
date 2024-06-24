@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Counter() {
   const [count, setCount] = useState(0);
   const handleIncrement = () => {
@@ -10,6 +10,19 @@ export default function Counter() {
       return prevCount - 1;
     });
   };
+  useEffect(() => {
+    console.log("Mounting");
+    return () => {
+      console.log("Unmouting");
+    };
+  }, []);
+  useEffect(() => {
+    console.log("Updating: ", count);
+    //Cleanup
+    return () => {
+      console.log("Cleanup: ", count);
+    };
+  }, [count]);
   return (
     <div>
       <h1>Count: {count}</h1>
