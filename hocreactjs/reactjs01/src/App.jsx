@@ -1,19 +1,5 @@
-import ImageUpload from "./components/ImageUpload";
+import MoneyConvert from "./components/MoneyConvert/MoneyConvert";
 
 export default function App() {
-  return (
-    <div>
-      <ImageUpload />
-    </div>
-  );
+  return <MoneyConvert />;
 }
-/*
-Các bước hoạt động của useEffect
-1. State thay đổi
-2. Component Re-render
-3. Update UI
-4. Cleanup (Nếu có) ==> Hàm được trả về từ callback của useEffect
-5. Callback useEffect
-
-
-*/
