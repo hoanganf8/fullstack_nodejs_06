@@ -47,6 +47,7 @@ const sectionPosition = Array.from(sectionList)
     };
   })
   .reverse();
+console.log(sectionPosition);
 
 window.addEventListener("scroll", (e) => {
   const position = window.scrollY;
@@ -55,6 +56,7 @@ window.addEventListener("scroll", (e) => {
   });
   if (result) {
     const selector = result.selector;
+    console.log(selector);
     const navItemActive = document.querySelector("nav .nav-item.active");
     if (navItemActive) {
       navItemActive.classList.remove("active");
