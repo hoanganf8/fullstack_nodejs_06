@@ -3,6 +3,7 @@ export const initialState = {
   auth: {
     isAuthenticated: false,
     user: {},
+    isLoading: true,
   },
 };
 export const rootReducer = (state, action) => {
@@ -14,14 +15,24 @@ export const rootReducer = (state, action) => {
     case "auth/set_user":
       return {
         ...state,
-        auth: { ...state.auth, isAuthenticated: true, user: action.payload },
+        auth: {
+          ...state.auth,
+          isAuthenticated: true,
+          user: action.payload,
+          isLoading: false,
+        },
       };
     case "auth/destroy_user":
       return {
         ...state,
-        auth: { ...state.auth, isAuthenticated: false, user: {} },
+        auth: {
+          ...state.auth,
+          isAuthenticated: false,
+          user: {},
+          isLoading: false,
+        },
       };
     default:
-      state;
+      return state;
   }
 };
