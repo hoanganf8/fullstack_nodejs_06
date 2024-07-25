@@ -1,7 +1,13 @@
 import Form from "./Form";
-
+import { notFound } from "next/navigation";
+export const metadata = {
+  title: "Chi tiết bài viết",
+};
 export default function PostsPage({ params, searchParams }) {
   const { path } = params;
+  if (path?.length && path[1] >= 1000) {
+    return notFound();
+  }
   return (
     <div>
       {path ? (
