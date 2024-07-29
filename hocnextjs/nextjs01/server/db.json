@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "title": "Học Next",
+      "id": 1
+    },
+    {
+      "title": "Học React",
+      "id": 2
+    },
+    {
+      "title": "Học JS",
+      "id": 3
+    }
+  ]
+}
