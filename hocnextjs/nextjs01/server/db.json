@@ -12,5 +12,61 @@
       "title": "Học JS",
       "id": 3
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1"
+    },
+    {
+      "name": "Product 2",
+      "id": 2
+    },
+    {
+      "name": "Product 3",
+      "id": 3
+    },
+    {
+      "name": "Product 4",
+      "id": 4
+    },
+    {
+      "name": "Product 5",
+      "id": 5
+    },
+    {
+      "name": "Product 6",
+      "id": 6
+    },
+    {
+      "name": "Product 7",
+      "id": 7
+    },
+    {
+      "name": "Product 8",
+      "id": 8
+    }
+  ],
+  "product-detail": [
+    {
+      "id": 1,
+      "content": "Content 1",
+      "productId": 1
+    },
+    {
+      "id": 2,
+      "content": "Content 2",
+      "productId": 2
+    },
+    {
+      "id": 3,
+      "content": "Content 3",
+      "productId": 3
+    },
+    {
+      "id": 4,
+      "content": "Content 4",
+      "productId": 4
+    }
   ]
 }
