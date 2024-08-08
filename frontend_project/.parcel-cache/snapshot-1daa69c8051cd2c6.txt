@@ -13,7 +13,7 @@
 116D:\F8 Training\Fullstack06\frontend_project\node_modules\csso\node_modules\css-tree\cjs\syntax\node\MediaFeature.cjs133627270854715463 0
 67D:\F8 Training\Fullstack06\frontend_project\node_modules\parcel\src133627270838483821 1
 87D:\F8 Training\Fullstack06\frontend_project\node_modules\type-fest\ts41\camel-case.d.ts133627270839663203 0
-48D:\F8 Training\Fullstack06\frontend_project\.env133627287387597712 0
+48D:\F8 Training\Fullstack06\frontend_project\.env133630646339571363 0
 99D:\F8 Training\Fullstack06\frontend_project\node_modules\caniuse-lite\data\features\setimmediate.js133627270872212618 0
 74D:\F8 Training\Fullstack06\frontend_project\node_modules\@msgpackr-extract133627282337812329 1
 91D:\F8 Training\Fullstack06\frontend_project\node_modules\@swc\helpers\cjs\_ts_generator.cjs133627270855350578 0
@@ -44,12 +44,12 @@
 81D:\F8 Training\Fullstack06\frontend_project\node_modules\abortcontroller-polyfill133627270842126925 1
 104D:\F8 Training\Fullstack06\frontend_project\node_modules\caniuse-lite\data\features\css-cascade-scope.js133627270859194644 0
 82D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\packager-html\lib133627270831744070 1
-49D:\F8 Training\Fullstack06\frontend_project\build133630643892960732 1
+49D:\F8 Training\Fullstack06\frontend_project\build133669116074840553 1
 80D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\src\locale\ja.js133627279049715928 0
 82D:\F8 Training\Fullstack06\frontend_project\node_modules\node-addon-api\napi-inl.h133627270840651598 0
 87D:\F8 Training\Fullstack06\frontend_project\node_modules\semver\internal\identifiers.js133627270842891518 0
 79D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\locale\de-at.js133627279047646781 0
-48D:\F8 Training\Fullstack06\frontend_project\dist133630643725081130 1
+48D:\F8 Training\Fullstack06\frontend_project\dist133669115669672629 1
 96D:\F8 Training\Fullstack06\frontend_project\node_modules\ordered-binary\.idea\ordered-binary.iml133627270835692079 0
 54D:\F8 Training\Fullstack06\frontend_project\index.html133627271542413444 0
 108D:\F8 Training\Fullstack06\frontend_project\node_modules\css-select\node_modules\entities\lib\index.d.ts.map133627270851041595 0
@@ -98,7 +98,7 @@
 79D:\F8 Training\Fullstack06\frontend_project\node_modules\term-size\package.json133627270839475235 0
 85D:\F8 Training\Fullstack06\frontend_project\node_modules\type-fest\source\except.d.ts133627270842281516 0
 94D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\cache\lib\IDBCache.browser.js133627270838393507 0
-54D:\F8 Training\Fullstack06\frontend_project\src\App.js133627287548806103 0
+54D:\F8 Training\Fullstack06\frontend_project\src\App.js133630644427609420 0
 112D:\F8 Training\Fullstack06\frontend_project\node_modules\csso\node_modules\css-tree\cjs\syntax\config\parser.cjs133627270855964453 0
 108D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-htmlnano\lib\HTMLNanoOptimizer.js133627270831933252 0
 81D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\dist\locale\lo.js133627279050087073 0
@@ -663,7 +663,7 @@
 100D:\F8 Training\Fullstack06\frontend_project\node_modules\htmlnano\lib\modules\removeOptionalTags.mjs133627270856583186 0
 81D:\F8 Training\Fullstack06\frontend_project\node_modules\source-map\lib\base64.js133627270838958961 0
 104D:\F8 Training\Fullstack06\frontend_project\node_modules\caniuse-lite\data\features\wasm-multi-memory.js133627270873877189 0
-59D:\F8 Training\Fullstack06\frontend_project\dist\index.html133630643724805739 0
+59D:\F8 Training\Fullstack06\frontend_project\dist\index.html133669115667552735 0
 85D:\F8 Training\Fullstack06\frontend_project\node_modules\ordered-binary\tests\test.js133627270838719404 0
 80D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\src\locale\fr.js133627279048790696 0
 91D:\F8 Training\Fullstack06\frontend_project\node_modules\caniuse-lite\dist\lib\supported.js133627270872619719 0
@@ -765,7 +765,6 @@
 87D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\src\lib\moment\valid.js133627279053434733 0
 86D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\workers\lib\Handle.js133627270843843192 0
 99D:\F8 Training\Fullstack06\frontend_project\node_modules\utility-types\dist\functional-helpers.d.ts133627270843152304 0
-79D:\F8 Training\Fullstack06\frontend_project\build\index.runtime.53f9d1f1.js.map133630643892938345 0
 73D:\F8 Training\Fullstack06\frontend_project\node_modules\is-json\index.js133627270836662126 0
 76D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\locale\bg.js133627279047023138 0
 83D:\F8 Training\Fullstack06\frontend_project\node_modules\svgo\plugins\mergePaths.js133627270852486365 0
@@ -2275,7 +2274,7 @@
 76D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\locale\es.js133627279048383110 0
 88D:\F8 Training\Fullstack06\frontend_project\node_modules\caniuse-lite\data\regions\LV.js133627270869079418 0
 85D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\src\lib\units\week.js133627279053501397 0
-66D:\F8 Training\Fullstack06\frontend_project\dist\index.3d214d75.js133630643724141516 0
+66D:\F8 Training\Fullstack06\frontend_project\dist\index.3d214d75.js133669115669605260 0
 133D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\MediaFeature.js133627270855593092 0
 101D:\F8 Training\Fullstack06\frontend_project\node_modules\caniuse-lite\data\features\battery-status.js133627270851990583 0
 80D:\F8 Training\Fullstack06\frontend_project\node_modules\moment\src\locale\nl.js133627279051451977 0
@@ -3474,6 +3473,7 @@
 87D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\cache\lib\LMDBCache.js133627270841281586 0
 112D:\F8 Training\Fullstack06\frontend_project\node_modules\dom-serializer\node_modules\entities\lib\index.d.ts.map133627270842029991 0
 114D:\F8 Training\Fullstack06\frontend_project\node_modules\dom-serializer\node_modules\entities\lib\maps\decode.json133627270838483821 0
+79D:\F8 Training\Fullstack06\frontend_project\build\index.runtime.27739c05.js.map133669116074790381 0
 116D:\F8 Training\Fullstack06\frontend_project\node_modules\dom-serializer\node_modules\entities\lib\maps\entities.json133627270839403204 0
 111D:\F8 Training\Fullstack06\frontend_project\node_modules\dom-serializer\node_modules\entities\lib\maps\xml.json133627270840663462 0
 79D:\F8 Training\Fullstack06\frontend_project\node_modules\dom-serializer\lib\esm133627270842359143 1
@@ -3895,7 +3895,6 @@
 78D:\F8 Training\Fullstack06\frontend_project\node_modules\color-convert\LICENSE133627270837053313 0
 100D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\markdown-ansi\test\markdown-ansi.js133627270836549435 0
 87D:\F8 Training\Fullstack06\frontend_project\node_modules\css-what\lib\es\index.d.ts.map133627270841561626 0
-75D:\F8 Training\Fullstack06\frontend_project\build\index.runtime.53f9d1f1.js133630643892787597 0
 91D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\core\lib\PackagerRunner.js133627270857167533 0
 81D:\F8 Training\Fullstack06\frontend_project\node_modules\css-what\lib\es\index.js133627270835974658 0
 83D:\F8 Training\Fullstack06\frontend_project\node_modules\css-what\lib\es\parse.d.ts133627270844857873 0
@@ -3933,7 +3932,7 @@
 76D:\F8 Training\Fullstack06\frontend_project\node_modules\css-tree\lib\syntax133627270861666034 1
 80D:\F8 Training\Fullstack06\frontend_project\node_modules\css-tree\lib\version.js133627270863629398 0
 76D:\F8 Training\Fullstack06\frontend_project\node_modules\css-tree\lib\walker133627270861776487 1
-67D:\F8 Training\Fullstack06\frontend_project\dist\index.c41b5a0e.css133630643725005701 0
+67D:\F8 Training\Fullstack06\frontend_project\dist\index.c41b5a0e.css133669115667552735 0
 86D:\F8 Training\Fullstack06\frontend_project\node_modules\css-tree\lib\walker\create.js133627270860166833 0
 114D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\lib\style.js133627270854347121 0
 85D:\F8 Training\Fullstack06\frontend_project\node_modules\css-tree\lib\walker\index.js133627270861788740 0
@@ -5852,7 +5851,7 @@
 90D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\core\src\public\Config.js133627270851747454 0
 83D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\graph\lib\types.js133627270844306089 0
 91D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-swc\package.json133627270836323611 0
-68D:\F8 Training\Fullstack06\frontend_project\build\index.51c5d9d2.css133630643892787597 0
+68D:\F8 Training\Fullstack06\frontend_project\build\index.51c5d9d2.css133669116074583904 0
 114D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\index.js133627270853556589 0
 82D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-swc\src133627270835468071 1
 92D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-svgo\node_modules133627270880375932 1
@@ -6200,7 +6199,7 @@
 125D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\walker\index.js133627270854749972 0
 124D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\utils\clone.js133627270843232241 0
 136D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\utils\createCustomError.js133627270846770442 0
-73D:\F8 Training\Fullstack06\frontend_project\build\HTTP_Steps.223d1fbb.png133630643830907332 0
+73D:\F8 Training\Fullstack06\frontend_project\build\HTTP_Steps.223d1fbb.png133669115979454177 0
 83D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\cache\src\types.js133627270842318007 0
 124D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\utils\names.js133627270855930744 0
 144D:\F8 Training\Fullstack06\frontend_project\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\tokenizer\char-code-definitions.js133627270842338211 0
@@ -6565,10 +6564,11 @@
 68D:\F8 Training\Fullstack06\frontend_project\node_modules\.bin\semver133627270882047085 0
 66D:\F8 Training\Fullstack06\frontend_project\node_modules\.bin\svgo133627270881986795 0
 70D:\F8 Training\Fullstack06\frontend_project\node_modules\.bin\svgo.ps1133627270881976780 0
-72D:\F8 Training\Fullstack06\frontend_project\dist\HTTP_Steps.61a943cf.png133630643723966679 0
-70D:\F8 Training\Fullstack06\frontend_project\dist\index.3d214d75.js.map133630643724207950 0
-71D:\F8 Training\Fullstack06\frontend_project\dist\index.c41b5a0e.css.map133630643725051153 0
-72D:\F8 Training\Fullstack06\frontend_project\build\index.51c5d9d2.css.map133630643892938345 0
-67D:\F8 Training\Fullstack06\frontend_project\build\index.caf8f91b.js133630643892787597 0
-71D:\F8 Training\Fullstack06\frontend_project\build\index.caf8f91b.js.map133630643892949734 0
-60D:\F8 Training\Fullstack06\frontend_project\build\index.html133630643892787597 0
+72D:\F8 Training\Fullstack06\frontend_project\dist\HTTP_Steps.61a943cf.png133669115666289868 0
+70D:\F8 Training\Fullstack06\frontend_project\dist\index.3d214d75.js.map133669115669662625 0
+71D:\F8 Training\Fullstack06\frontend_project\dist\index.c41b5a0e.css.map133669115667609031 0
+67D:\F8 Training\Fullstack06\frontend_project\build\index.1af1c529.js133669116074583904 0
+71D:\F8 Training\Fullstack06\frontend_project\build\index.1af1c529.js.map133669116074800579 0
+72D:\F8 Training\Fullstack06\frontend_project\build\index.51c5d9d2.css.map133669116074790381 0
+60D:\F8 Training\Fullstack06\frontend_project\build\index.html133669116074583904 0
+75D:\F8 Training\Fullstack06\frontend_project\build\index.runtime.27739c05.js133669116074583904 0

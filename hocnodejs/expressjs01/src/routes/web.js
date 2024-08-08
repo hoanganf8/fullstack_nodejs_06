@@ -1,0 +1,12 @@
+const express = require("express");
+const homeController = require("../controllers/home.controller");
+const userController = require("../controllers/user.controller");
+const authMiddleware = require("../middlewares/auth.middleware");
+const permissionMiddleware = require("../middlewares/permission.middleware");
+const router = express.Router();
+router.get("/", homeController.index.bind(homeController));
+router.use(authMiddleware, permissionMiddleware);
+router.get("/users", userController.index);
+router.get("/users/:id", userController.show);
+router.post("/users", userController.create);
+module.exports = router;
