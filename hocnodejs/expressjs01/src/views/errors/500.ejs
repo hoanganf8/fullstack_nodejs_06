@@ -1,0 +1,5 @@
+<h1>Server Error</h1>
+<h2>Vui lòng kiểm tra lại</h2>
+<% if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) { %>
+<pre><%- message %></pre>
+<% } %>

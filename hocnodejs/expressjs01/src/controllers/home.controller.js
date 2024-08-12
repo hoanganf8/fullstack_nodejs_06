@@ -1,13 +1,9 @@
 module.exports = {
   index: function (req, res) {
-    res.send(
-      `
-        ${this.getSlide()}
-        <h1>Home</h1>
-        `
-    );
-  },
-  getSlide: () => {
-    return `<h1>Slide</h1>`;
+    const title = "<i>F8 - Học lập trình để đi làm 111</i>";
+    const pageTitle = "Trang chủ";
+    const status = false;
+    const users = ["User 1", "User 2", "User 3"];
+    res.render("home/index", { title, status, users, pageTitle });
   },
 };

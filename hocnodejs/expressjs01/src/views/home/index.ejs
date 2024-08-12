@@ -1,0 +1,13 @@
+<h1>Home</h1>
+<%- include('slide') %>
+<h2>Học lập trình không khó</h2>
+<% if (status) { %>
+<h2><%- title %></h2>
+<% } %>
+<h2>Danh sách người dùng</h2>
+<% users.forEach(user => { %>
+<h3><%= user %></h3>
+<% }) %>
+<div>
+  <img src="/images/img01.png" width="300" alt="" />
+</div>
