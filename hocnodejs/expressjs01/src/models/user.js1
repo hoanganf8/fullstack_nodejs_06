@@ -1,0 +1,18 @@
+const db = require("../utils/db");
+module.exports = {
+  getUsers: () => {
+    return db`SELECT * FROM users ORDER BY id DESC`;
+  },
+  getUser: (id) => {
+    return db`SELECT * FROM users WHERE id = ${id}`;
+  },
+  addUser: (data) => {
+    //raw query
+    return db`INSERT INTO users (name, email, password, status, created_at, updated_at) VALUES (${
+      data.name
+    }, ${data.email}, ${data.password}, ${
+      data.status
+    }, ${new Date()}, ${new Date()})
+    RETURNING *`;
+  },
+};
