@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch server"
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,8 @@
     "pg-hstore": "^2.3.4",
     "postgres": "^3.4.4",
     "sequelize": "^6.37.3",
-    "winston": "^3.14.1"
+    "winston": "^3.14.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.2"

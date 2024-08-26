@@ -67,18 +67,161 @@
 //     }
 //   },
 // };
+const { Op } = require("sequelize");
 const { User } = require("../models/index");
+const { object, string } = require("yup");
 module.exports = {
   index: async (req, res) => {
     try {
-      const users = await User.findAll({
-        order: [["id", "DESC"]],
-        attributes: { exclude: "password" },
-        limit: 3,
+      const { limit = 2, page = 1 } = req.query;
+      const offset = (page - 1) * limit;
+      const { rows: users, count } = await User.findAndCountAll({
+        // order: [["id", "DESC"]],
+        // attributes: { exclude: "password" },
+        // limit,
+        // offset,
+        // where: {
+        //   [Op.or]: {
+        //     id: {
+        //       [Op.gt]: 3, //id > 3
+        //     },
+        //     email: {
+        //       [Op.iLike]: `%hoangan%`,
+        //     },
+        //   },
+        //   status: {
+        //     [Op.in]: [true, false],
+        //   },
+        // },
+        // paranoid: false,
       });
+      res.set("x-total-count", count);
       return res.json({ users });
     } catch (error) {
       return res.json({ error: error.message });
     }
+  },
+  find: async (req, res) => {
+    try {
+      const { id } = req.params;
+      // const user = await User.findByPk(id);
+      const user = await User.findOne({
+        where: { id: id },
+      });
+      if (!user) {
+        const error = new Error("User Not Found");
+        error.status = 404;
+        throw error;
+      }
+      return res.json({ user });
+    } catch (e) {
+      return res.status(e.status ?? 500).json({ error: e.message });
+    }
+  },
+  create: async (req, res) => {
+    try {
+      const schema = object({
+        name: string()
+          .required("Tên không được để trống")
+          .min(4, "Tên phải từ 4 ký tự"),
+        email: string()
+          .required("Email không được để trống")
+          .email("Email không đúng định dạng")
+          .test(
+            "email-unique",
+            "Email đã tồn tại trên hệ thống",
+            async (value) => {
+              //return true ==> passed
+              const user = await User.findOne({
+                where: { email: value },
+              });
+              return !user;
+            }
+          ),
+        password: string().required("Mật khẩu không được để trống"),
+      });
+      const body = await schema.validate(req.body, {
+        abortEarly: false, //Trả về full lỗi
+      });
+      const user = await User.create(body);
+      res.status(201).json({ user });
+    } catch (e) {
+      if (e.inner) {
+        const errors = Object.fromEntries(
+          e.inner.map((error) => {
+            return [error.path, error.message];
+          })
+        );
+        return res.status(400).json({ errors });
+      }
+
+      return res.status(e.status ?? 500).json({ error: e.message });
+    }
+  },
+  update: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const schema = object({
+        name: string()
+          .required("Tên không được để trống")
+          .min(4, "Tên phải từ 4 ký tự"),
+        email: string()
+          .required("Email không được để trống")
+          .email("Email không đúng định dạng")
+          .test(
+            "email-unique",
+            "Email đã tồn tại trên hệ thống",
+            async (value) => {
+              //return true ==> passed
+              const user = await User.findOne({
+                where: {
+                  email: value,
+                  id: {
+                    [Op.ne]: id,
+                  },
+                },
+              });
+              return !user;
+            }
+          ),
+        password: string().required("Mật khẩu không được để trống"),
+      });
+      const body = await schema.validate(req.body, {
+        abortEarly: false, //Trả về full lỗi
+      });
+      const status = await User.update(body, { where: { id } });
+      res.json({ status });
+    } catch (e) {
+      if (e.inner) {
+        const errors = Object.fromEntries(
+          e.inner.map((error) => {
+            return [error.path, error.message];
+          })
+        );
+        return res.status(400).json({ errors });
+      }
+
+      return res.status(e.status ?? 500).json({ error: e.message });
+    }
+  },
+  destroy: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const status = await User.destroy({ where: { id } });
+      res.json({ status });
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  },
+  restore: async (req, res) => {
+    const { id } = req.params;
+    const user = await User.findByPk(id, {
+      paranoid: false,
+    });
+    if (user) {
+      const status = await user.restore();
+      return res.json({ status });
+    }
+    res.json({ user });
   },
 };
