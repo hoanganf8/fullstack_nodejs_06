@@ -68,7 +68,7 @@
 //   },
 // };
 const { Op } = require("sequelize");
-const { User } = require("../models/index");
+const { User, Phone } = require("../models/index");
 const { object, string } = require("yup");
 module.exports = {
   index: async (req, res) => {
@@ -94,8 +94,21 @@ module.exports = {
         //   },
         // },
         // paranoid: false,
+        include: [
+          {
+            model: Phone,
+            as: "phone",
+            attributes: ["id", "phone"],
+          },
+        ],
       });
       res.set("x-total-count", count);
+      // for (let i = 0; i < users.length; i++) {
+      //   const user = users[i];
+      //   const phone = await user.getPhone();
+      //   const phoneValue = phone.dataValues.phone;
+      //   users[i].setDataValue("phone", phoneValue);
+      // }
       return res.json({ users });
     } catch (error) {
       return res.json({ error: error.message });
@@ -113,7 +126,8 @@ module.exports = {
         error.status = 404;
         throw error;
       }
-      return res.json({ user });
+      const phone = await user.getPhone();
+      return res.json({ user, phone });
     } catch (e) {
       return res.status(e.status ?? 500).json({ error: e.message });
     }
@@ -121,7 +135,7 @@ module.exports = {
   create: async (req, res) => {
     try {
       const schema = object({
-        name: string()
+        fullname: string()
           .required("Tên không được để trống")
           .min(4, "Tên phải từ 4 ký tự"),
         email: string()
@@ -144,7 +158,10 @@ module.exports = {
         abortEarly: false, //Trả về full lỗi
       });
       const user = await User.create(body);
-      res.status(201).json({ user });
+      const phone = await user.createPhone({
+        phone: req.body.phone,
+      });
+      res.status(201).json({ user, phone });
     } catch (e) {
       if (e.inner) {
         const errors = Object.fromEntries(
