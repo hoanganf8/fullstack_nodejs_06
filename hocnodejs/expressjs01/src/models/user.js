@@ -12,6 +12,15 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "user_id",
         as: "phone",
       });
+      User.hasMany(models.Post, {
+        foreignKey: "user_id",
+        as: "posts",
+      });
+      User.belongsToMany(models.Course, {
+        through: "users_courses",
+        foreignKey: "user_id",
+        as: "courses",
+      });
     }
   }
   User.init(

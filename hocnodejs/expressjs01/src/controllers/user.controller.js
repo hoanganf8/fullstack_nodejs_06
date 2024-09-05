@@ -68,7 +68,7 @@
 //   },
 // };
 const { Op } = require("sequelize");
-const { User, Phone } = require("../models/index");
+const { User, Phone, Post, Course } = require("../models/index");
 const { object, string } = require("yup");
 module.exports = {
   index: async (req, res) => {
@@ -100,6 +100,17 @@ module.exports = {
             as: "phone",
             attributes: ["id", "phone"],
           },
+          {
+            model: Post,
+            as: "posts",
+            attributes: ["id", "title", "content"],
+          },
+          {
+            model: Course,
+            as: "courses",
+            attributes: ["id", "name", "price"],
+            through: { attributes: [] }, //Hiển thị dữ liệu bảng trung gian
+          },
         ],
       });
       res.set("x-total-count", count);
@@ -127,7 +138,9 @@ module.exports = {
         throw error;
       }
       const phone = await user.getPhone();
-      return res.json({ user, phone });
+      const posts = await user.getPosts();
+      const courses = await user.getCourses();
+      return res.json({ user, phone, posts, courses });
     } catch (e) {
       return res.status(e.status ?? 500).json({ error: e.message });
     }
