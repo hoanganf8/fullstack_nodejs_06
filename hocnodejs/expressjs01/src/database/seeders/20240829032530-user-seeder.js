@@ -1,5 +1,5 @@
 "use strict";
-
+const { hashPassword } = require("../../utils/hash");
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -8,7 +8,7 @@ module.exports = {
         fullname: "User 1",
         email: "user1@gmail.com",
         status: true,
-        password: "123456",
+        password: hashPassword("123456"),
         created_at: new Date(),
         updated_at: new Date(),
       },
@@ -16,7 +16,7 @@ module.exports = {
         fullname: "User 2",
         email: "user2@gmail.com",
         status: false,
-        password: "123456",
+        password: hashPassword("123456"),
         created_at: new Date(),
         updated_at: new Date(),
       },

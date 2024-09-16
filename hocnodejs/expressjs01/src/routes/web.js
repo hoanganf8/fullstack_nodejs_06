@@ -6,6 +6,7 @@ const userCourseController = require("../controllers/userCourse.controller");
 // const authMiddleware = require("../middlewares/auth.middleware");
 // const permissionMiddleware = require("../middlewares/permission.middleware");
 const sendMail = require("../utils/mail");
+const redis = require("../utils/redis");
 const router = express.Router();
 router.get("/", homeController.index.bind(homeController));
 // router.use(authMiddleware, permissionMiddleware);
@@ -32,5 +33,14 @@ router.get("/test-mail", async (req, res) => {
   );
   res.json({ info });
 });
+
+router.get("/test-redis", async (req, res) => {
+  await redis.connect();
+  // await redis.set("name", "hoangan");
+  await redis.delete("name");
+  const name = await redis.get("name");
+  await redis.close();
+  res.json({ name });
+});
+
 module.exports = router;
-``;
