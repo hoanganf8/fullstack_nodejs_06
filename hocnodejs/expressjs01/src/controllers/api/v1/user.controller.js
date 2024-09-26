@@ -55,4 +55,12 @@ module.exports = {
       });
     }
   },
+  create: async (req, res) => {
+    return successResponse({
+      res,
+      status: 201,
+      data: null,
+      message: "Create user successfully",
+    });
+  },
 };

@@ -1,6 +1,15 @@
 import Link from "next/link";
-
-export default function PermissionPage() {
+const getRoles = async () => {
+  const response = await fetch(`${process.env.SERVER_API}/admin/roles`, {
+    next: {
+      tags: ["roles"],
+    },
+  });
+  const data = await response.json();
+  return data;
+};
+export default async function PermissionPage() {
+  const roles = await getRoles();
   return (
     <div>
       <h2>Danh sách vai trò</h2>
@@ -17,20 +26,25 @@ export default function PermissionPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Admin</td>
-            <td>
-              <a href="#" className="btn btn-warning">
-                Sửa
-              </a>
-            </td>
-            <td>
-              <a href="#" className="btn btn-danger">
-                Xóa
-              </a>
-            </td>
-          </tr>
+          {roles.data.map(({ id, name }, index) => (
+            <tr key={id}>
+              <td>{index + 1}</td>
+              <td>{name}</td>
+              <td>
+                <Link
+                  href={`/admin/permissions/edit/${id}`}
+                  className="btn btn-warning"
+                >
+                  Sửa
+                </Link>
+              </td>
+              <td>
+                <a href="#" className="btn btn-danger">
+                  Xóa
+                </a>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

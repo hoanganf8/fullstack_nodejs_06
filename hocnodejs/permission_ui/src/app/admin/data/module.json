@@ -1,0 +1,14 @@
+[
+  {
+    "name": "products",
+    "title": "Quản lý sản phẩm"
+  },
+  {
+    "name": "posts",
+    "title": "Quản lý bài viết"
+  },
+  {
+    "name": "users",
+    "title": "Quản lý người dùng"
+  }
+]

@@ -4,7 +4,7 @@ const { errorResponse } = require("../utils/response");
 const redis = require("../utils/redis");
 module.exports = async (req, res, next) => {
   try {
-    const accessToken = req.get("Authorization").split(" ").slice(-1).join();
+    const accessToken = req.get("Authorization")?.split(" ").slice(-1).join();
     const { userId } = verifyAccessToken(accessToken);
     //Kiểm tra blacklist
     await redis.connect();

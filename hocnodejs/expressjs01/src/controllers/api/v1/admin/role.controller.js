@@ -4,8 +4,46 @@ const {
 } = require("../../../../utils/response");
 const { Permission, Role } = require("../../../../models/index");
 module.exports = {
-  index: (req, res) => {
-    res.json({});
+  index: async (req, res) => {
+    try {
+      const roles = await Role.findAll();
+      return successResponse({
+        res,
+        data: roles,
+        message: "Get roles successfully",
+      });
+    } catch (error) {
+      return errorResponse({
+        res,
+        status: error.status || 500,
+        message: "Get roles failed",
+        errors: error.message,
+      });
+    }
+  },
+  find: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const role = await Role.findByPk(id, {
+        include: {
+          model: Permission,
+          as: "permissions",
+          through: { attributes: [] },
+        },
+      });
+      return successResponse({
+        res,
+        data: role,
+        message: "Get role successfully",
+      });
+    } catch (error) {
+      return errorResponse({
+        res,
+        status: error.status || 500,
+        message: "Get role failed",
+        errors: error.message,
+      });
+    }
   },
   create: async (req, res) => {
     try {
